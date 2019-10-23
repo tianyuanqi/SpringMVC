@@ -28,6 +28,7 @@
  
     静态资源配置
     <mvc:resources location="/assets/" mapping="/assets/**"></mvc:resources> -->
+ 	
  
     <!-- 视图层配置 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -35,5 +36,8 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+	<mvc:default-servlet-handler/>
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<mvc:resources location="/static/" mapping="/static/**"/>	
 
 </beans>

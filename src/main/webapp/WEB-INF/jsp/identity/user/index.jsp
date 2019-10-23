@@ -7,10 +7,25 @@
 <head>
 <meta charset="UTF-8">
 <title>用户首页</title>
-
+<c:set value="${pageContext.request.contextPath}" var="path"
+	scope="page" />
+<script type="text/javascript" src="${path}/static/js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".delete").click(function() {
+			var href = $(this).attr("href");
+			$("form").attr("action", href).submit();
+			return false;
+		});
+	})
+</script>
 </head>
 <body>
-	<a href="add">添加用户</a>
+	<form action="" method="post">
+		<input type="hidden" name="_method" value="DELETE" />
+	</form>
+	<a href="user">添加用户</a>
+
 
 	<br>
 	<br>
@@ -35,8 +50,8 @@
 					<td>${u.name }</td>
 					<td>${u.lastName }</td>
 					<td>${u.age }</td>
-					<td></td>
-					<td></td>
+					<td><a href="user/${u.id }">修改</a></td>
+					<td><a class="delete" href="user/${u.id }">删除</a></td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -5,11 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+
 </head>
 <body>
 	Hello World！
 	<br>
-	<a href="identity/user">用户首页</a>
+	<a href="identity/users">用户首页</a>
 	<br>
 </body>
 </html>
